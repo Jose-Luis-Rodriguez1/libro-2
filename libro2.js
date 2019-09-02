@@ -1,21 +1,16 @@
-var Calculo = /** @class */ (function () {
-    // constructor
+var Calculo = (function () {
     function Calculo(x, y) {
-        // variables de clase declaradas y asignadas
         this.x = 0;
         this.y = 0;
-        // métodos del constructor
         this.setX(x);
         this.setY(y);
     }
-    // Setters
     Calculo.prototype.setX = function (x) {
         this.x = x;
     };
     Calculo.prototype.setY = function (y) {
         this.y = y;
     };
-    // Getters
     Calculo.prototype.getX = function () {
         return this.x;
     };
