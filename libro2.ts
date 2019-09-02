@@ -1,15 +1,17 @@
-Promise.resolve(123)
+Promise.reject(new Error('something bad happened'))
 .then((res) => {
-console.log(res); // 123
+console.log(res); 
 return 456;
 })
 .then((res) => {
-console.log(res); // 456
+console.log(res); 
 return Promise.resolve(123);
 })
 .then((res) => {
-console.log(res); // 123 : Notice that this `this` is called with the resolved
-value
+console.log(res); 
 return Promise.resolve(123);
 })
+.catch((err) => {
+console.log(err.message);
+});
     
