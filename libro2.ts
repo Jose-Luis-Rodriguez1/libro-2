@@ -1,24 +1,12 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator
-    ) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-    function fulfilled(value) { try { step(generator.next(value)); } catch (e) { r
-    eject(e); } }
-    function rejected(value) { try { step(generator.throw(value)); } catch (e) { r
-    eject(e); } }
-    function step(result) { result.done ? resolve(result.value) : new P(function (
-    resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-    step((generator = generator.apply(thisArg, _arguments)).next());
-    });
-    };
-
-    function foo() {
-    return __awaiter(this, void 0, void 0, function* () {
-    try {
-    var val = yield getMeAPromise();
-    console.log(val);
+class Startup {
+    private text: String;
+    constructor (texto: String) {
+    this.text = texto;
     }
-    catch (err) {
-    console.log('Error: ', err.message);
+    public main () : number {
+    console.log(this.text);
+    return 0;
     }
-    });
     }
+    let s = new Startup("Hola mundo");
+    s.main();
