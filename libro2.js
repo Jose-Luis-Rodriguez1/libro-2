@@ -1,19 +1,7 @@
-var Disposable = /** @class */ (function () {
-    function Disposable() {
+var test = /** @class */ (function () {
+    function test(b, c) {
+        this.b = b;
+        this.c = c;
     }
-    Disposable.prototype.dispose = function () {
-        this.isDisposed = true;
-    };
-    return Disposable;
-}());
-var Activatable = /** @class */ (function () {
-    function Activatable() {
-    }
-    Activatable.prototype.activate = function () {
-        this.isActive = true;
-    };
-    Activatable.prototype.deactivate = function () {
-        this.isActive = false;
-    };
-    return Activatable;
+    return test;
 }());
