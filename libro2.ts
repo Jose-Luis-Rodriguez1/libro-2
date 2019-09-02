@@ -1,9 +1,15 @@
-const promise = new Promise((resolve, reject) => {
-    reject(new Error("Algo malo a pasado"));
-    });
-    promise.then((res) => {
-    });
-    promise.catch((err) => {
-    console.log('Tengo una llamada: ', err.message);
-    });
+Promise.resolve(123)
+.then((res) => {
+console.log(res); // 123
+return 456;
+})
+.then((res) => {
+console.log(res); // 456
+return Promise.resolve(123);
+})
+.then((res) => {
+console.log(res); // 123 : Notice that this `this` is called with the resolved
+value
+return Promise.resolve(123);
+})
     
