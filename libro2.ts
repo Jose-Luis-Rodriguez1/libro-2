@@ -1,5 +1,5 @@
-function loadItem(id: number): Promise<{id: number}> {
-    return new Promise((resolve)=>{
+function loadItem(id) {
+    return new Promise((resolve) => {
     console.log('loading item', id);
     setTimeout(() => {
     resolve({ id: id });
@@ -16,8 +16,8 @@ function loadItem(id: number): Promise<{id: number}> {
     item2 = res;
     console.log('done');
     });
-    Promise.all([loadItem(1),loadItem(2)])
+    Promise.all([loadItem(1), loadItem(2)])
     .then((res) => {
-    [item1,item2] = res;
-    console.log('done')
+    [item1, item2] = res;
+    console.log('done');
     });
