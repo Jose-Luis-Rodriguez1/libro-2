@@ -1,17 +1,10 @@
-function getFirstName() {
-    setTimeout(function(){
-    gen.next('alex')
-    }, 1000);
+async function foo() {
+    try {
+    var val = await getMeAPromise();
+    console.log(val);
     }
-    function getSecondName() {
-    setTimeout(function(){
-    gen.next('perry')
-    }, 1000);
+    catch(err) {
+    console.log('Error: ', err.message);
     }
-    function *sayHello() {
-    var a = yield getFirstName();
-    var b = yield getSecondName();
-    console.log(a, b); 
     }
-    var gen = sayHello();
-    gen.next();
+    
