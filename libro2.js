@@ -11,23 +11,26 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var FooBase = /** @class */ (function () {
-    function FooBase() {
+var Point = /** @class */ (function () {
+    function Point(x, y) {
+        this.x = x;
+        this.y = y;
     }
-    return FooBase;
+    Point.prototype.add = function (point) {
+        return new Point(this.x + point.x, this.y + point.y);
+    };
+    return Point;
 }());
-var foo = new FooBase();
-foo.x;
-foo.y;
-foo.z;
-var FooChild = /** @class */ (function (_super) {
-    __extends(FooChild, _super);
-    function FooChild() {
-        var _this = _super.call(this) || this;
-        _this.x;
-        _this.y;
-        _this.z;
+var Point3D = /** @class */ (function (_super) {
+    __extends(Point3D, _super);
+    function Point3D(x, y, z) {
+        var _this = _super.call(this, x, y) || this;
+        _this.z = z;
         return _this;
     }
-    return FooChild;
-}(FooBase));
+    Point3D.prototype.add = function (point) {
+        var point2D = _super.prototype.add.call(this, point);
+        return new Point3D(point2D.x, point2D.y, this.z + point.z);
+    };
+    return Point3D;
+}(Point));
